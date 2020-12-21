@@ -1,0 +1,19 @@
+#main-container #configs-container {
+    padding: 20px;
+}
+#main-container section #rooms-container ul {
+    min-width: 300px;
+    overflow: auto;
+    height: 70vh;
+}
+
+#main-container section #rooms-container ul li {
+    width: 100%;
+    padding: 10px;
+}
+
+#main-container section #room-form-container #room-form {
+    display: flex;
+    flex-direction: column;
+}
+
