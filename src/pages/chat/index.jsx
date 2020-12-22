@@ -11,22 +11,21 @@ function Chat() {
     const params = useParams();
 
     useEffect(() => {
-        socket.emit('joinroom', { id: params.id});
+        socket.emit('joinroom', { room: params.id});
         socket.on('newmesage', (data) => {
-            console.log(data)
             setMessages([...messages, data]);
         });
     }, []);
 
     function leftRoom() {
-        socket.emit('leftroom', { id: params.id});
-        history.push('/')
+        socket.emit('leftroom', { room: params.id});
+        history.push('/');
     }
 
     function sentMessage(event) {
         event.preventDefault();
         const name = localStorage.getItem('user.name');
-        socket.emit('sentmesage', {name: name ? name : 'user', message})
+        socket.emit('sentmesage', {name: name ? name : 'user', message});
         setMessage('');
     }
 

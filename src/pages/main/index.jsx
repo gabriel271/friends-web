@@ -4,7 +4,6 @@ import { socket } from '../../services/socket';
 import './styles.css';
 
 socket.on('connect', () => {
-    console.log('socket conectado');
     socket.emit('login')
 });
 
@@ -18,7 +17,10 @@ function Main() {
 
     useEffect(() => {
         socket.emit('getrooms');
-        socket.on('listrooms', (data) => setRooms(data));
+        socket.on('listrooms', (data) => {
+            setRooms(JSON.parse(data))
+            console.log('test')
+        });
     }, []);
 
     function createRoom(event) {
