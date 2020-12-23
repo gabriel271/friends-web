@@ -13,16 +13,41 @@
 
 #chat-container section ul {
     min-width: 400px;
+    width: 70%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     border: solid var(--primary) 2px;
     overflow: auto;
     padding: 5px;
+    margin: 5px 0px;
 }
 
 
 #chat-container section ul li {
     list-style: none;
+    padding: 10px;
+    color: var(--bg);
+    max-width: 50%;
+    width: min-content;
+    border-radius: 15px;
+    margin: 2px;
+}
+
+#chat-container section ul li p:first-child {
+    color: var(--secundary);
+} 
+
+#chat-container section ul .my-message {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: var(--my-message);
+    align-self: flex-end;
+}
+
+#chat-container section ul .not-my-message {
+    background-color: var(--not-my-message);
 }
 
 #chat-container section form {
@@ -30,4 +55,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#chat-container section form input {
+    width: 50rem;
 }

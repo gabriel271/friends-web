@@ -1,13 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 :root {
     --primary: #212121;
     --bg: #eee;
-    --secundary: #eeeeee50;
+    --secundary: #eeeeee80;
+    --my-message: #2E8B57;
+    --not-my-message: #2F4F4F;
 }
 
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {

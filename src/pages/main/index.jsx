@@ -5,6 +5,7 @@ import './styles.css';
 
 socket.on('connect', () => {
     socket.emit('login')
+    console.log(socket.id)
 });
 
 function Main() {
@@ -19,7 +20,6 @@ function Main() {
         socket.emit('getrooms');
         socket.on('listrooms', (data) => {
             setRooms(JSON.parse(data))
-            console.log('test')
         });
     }, []);
 
@@ -67,7 +67,7 @@ function Main() {
                             <li key={room.id} className="container">
                                 <p>{room.name} {room.participants.length}/{room.max}</p>
                                 <button type="button"
-                                    onClick={() => history.push(`/chat/${room.id}`)}
+                                    onClick={() => history.push(`/chat/${room.id}/${room.name}`)}
                                 >JOIN</button>
                             </li>
                         )

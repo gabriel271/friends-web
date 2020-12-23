@@ -3,7 +3,6 @@ import { useHistory, useParams } from 'react-router-dom';
 import { socket } from '../../services/socket';
 import './styles.css';
 
-
 function Chat() {
     const [messages, setMessages] = useState([]);
     const [message, setMessage] = useState('');
@@ -12,8 +11,13 @@ function Chat() {
 
     useEffect(() => {
         socket.emit('joinroom', { room: params.id});
+    }, []);
+
+    useEffect(() => {
         socket.on('newmesage', (data) => {
-            setMessages([...messages, data]);
+            setMessages(state => [...state, data]);
+            let scroll = document.getElementsByTagName('ul')[0];
+            scroll.scrollTop = scroll.scrollHeight;
         });
     }, []);
 
@@ -32,7 +36,7 @@ function Chat() {
   return (
       <div id="chat-container">
             <div id="header" className="container">
-                <h2>Nome do Chat</h2>
+                <h2>Sala: {params.name}</h2>
                 <button type="button"
                     onClick={leftRoom}
                 >SAIR</button> 
@@ -41,7 +45,9 @@ function Chat() {
                 <ul>
                     {messages.map((message, index) => {
                         return (
-                            <li key={index}>
+                            <li key={index} 
+                                className={socket.id === message.author ? 'my-message' : 'not-my-message'}
+                            >
                                 <p>{message.name}</p>
                                 <p>{message.message}</p>
                             </li>
