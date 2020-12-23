@@ -29,7 +29,7 @@ function Chat() {
     function sentMessage(event) {
         event.preventDefault();
         const name = localStorage.getItem('user.name');
-        socket.emit('sentmesage', {name: name ? name : 'user', message});
+        socket.emit('sentmesage', {name: name ? name : 'user', message, room: params.id});
         setMessage('');
     }
 
