@@ -58,7 +58,10 @@ function Main() {
                                 <li key={room.id} className="container">
                                     <p>{room.name} {room.participants.length}/{room.max}</p>
                                     <button type="button"
-                                        onClick={() => history.push(`/chat/${room.id}/${room.name}`)}
+                                        onClick={() => {
+                                            if(Number(room.participants.length) === Number(room.max)) return alert('Sala cheia');
+                                            history.push(`/chat/${room.id}/${room.name}`);
+                                        }}
                                     >JOIN</button>
                                 </li>
                             )
