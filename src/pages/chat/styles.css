@@ -12,7 +12,7 @@
 }
 
 #chat-container section ul {
-    min-width: 400px;
+    min-width: 300px;
     width: 70%;
     height: 100%;
     display: flex;
@@ -58,5 +58,5 @@
 }
 
 #chat-container section form input {
-    width: 50rem;
+    width: 70%;
 }

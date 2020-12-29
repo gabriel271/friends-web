@@ -5,7 +5,6 @@ import './styles.css';
 
 socket.on('connect', () => {
     socket.emit('login')
-    console.log(socket.id)
 });
 
 function Main() {
@@ -38,14 +37,6 @@ function Main() {
     return (
         <div id="main-container">
             <div id="configs-container" className="container">
-                <form id="search-form">
-                    <input type="text" 
-                        placeholder="Busacar sala por nome..."
-                        value={search}
-                        onChange={(event) => setSearch(event.target.value)}
-                    />
-                    <button type="submite">PESQUISAR</button>
-                </form>
                 <form id="user-name-form"
                     onSubmit={changeName}
                 >
@@ -58,41 +49,41 @@ function Main() {
                 </form>
             </div>
 
-        <section className="container">
-            <div id="rooms-container">
-                <h2>Salas</h2>
-                <ul>
-                    {rooms.map((room) => {
-                        return (
-                            <li key={room.id} className="container">
-                                <p>{room.name} {room.participants.length}/{room.max}</p>
-                                <button type="button"
-                                    onClick={() => history.push(`/chat/${room.id}/${room.name}`)}
-                                >JOIN</button>
-                            </li>
-                        )
-                    })}
-                </ul>
-            </div>
-            <div id="room-form-container">
-                <h2>Criar sala</h2>
-                <form id="room-form"
-                    onSubmit={createRoom}
-                >
-                    <input type="text" 
-                        required placeholder="Nome da sala"
-                        value={roomName}
-                        onChange={(event) => setRoomName(event.target.value)}
-                    />
-                    <input type="number" 
-                        required placeholder="Numero maximo de participantes"
-                        value={roomMax}
-                        onChange={(event) => setRoomMax(event.target.value)}
-                    />
-                    <button type="submite">ADICIONAR</button>
-                </form>
-            </div>
-        </section>
+            <section>
+                <div id="rooms-container">
+                    <h2>Salas</h2>
+                    <ul>
+                        {rooms.map((room) => {
+                            return (
+                                <li key={room.id} className="container">
+                                    <p>{room.name} {room.participants.length}/{room.max}</p>
+                                    <button type="button"
+                                        onClick={() => history.push(`/chat/${room.id}/${room.name}`)}
+                                    >JOIN</button>
+                                </li>
+                            )
+                        })}
+                    </ul>
+                </div>
+                <div id="room-form-container">
+                    <h2>Criar sala</h2>
+                    <form id="room-form"
+                        onSubmit={createRoom}
+                    >
+                        <input type="text" 
+                            required placeholder="Nome da sala"
+                            value={roomName}
+                            onChange={(event) => setRoomName(event.target.value)}
+                        />
+                        <input type="number" 
+                            required placeholder="Numero maximo de participantes"
+                            value={roomMax}
+                            onChange={(event) => setRoomMax(event.target.value)}
+                        />
+                        <button type="submite">ADICIONAR</button>
+                    </form>
+                </div>
+            </section>
       </div>
     );
 }
