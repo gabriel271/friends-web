@@ -1,0 +1,48 @@
+#home-container #configs-container {
+    padding: 20px;
+    background-color: var(--primary);
+}
+
+#home-container section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#home-container section #rooms-container ul {
+    min-width: 300px;
+    height: 80vh;
+    overflow: auto;
+    max-height: 400px;
+    border: solid 2px var(--secundary);
+    padding: 0px 3px;
+}
+
+#home-container section #rooms-container ul li {
+    width: 100%;
+    padding: 10px;
+    border: solid 2px var(--primary);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 2px 0px;
+}
+
+#home-container section #rooms-container ul li:hover {
+    background-color: #21212180;
+    cursor: pointer;
+} 
+
+#home-container section #room-form-container #room-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+@media (max-width: 600px) {
+    #home-container section {
+        display: flex;
+        flex-direction: column;
+    }
+}

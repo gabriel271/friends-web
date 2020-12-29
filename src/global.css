@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
-    --primary: #212121;
+    --primary: #4F758C;
+    --secundary: #7794A6;
+    --activable: #F2C094;
+    --activated: #F2C09480;
+    --black: #212121;
     --bg: #eee;
-    --secundary: #eeeeee80;
+    --username: #eeeeee80;
     --my-message: #2E8B57;
     --not-my-message: #2F4F4F;
 }
@@ -18,6 +22,7 @@
 body {
     width: 100%;
     height: 100vh;
+    background-color: var(--bg);
 }
 
 .container {
@@ -26,9 +31,24 @@ body {
 }
 
 button {
-    padding: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    color: var(--black);
+    background-color: var(--activable);
+}
+
+button:hover {
+    background-color: var(--activated);
+    cursor: pointer;
 }
 
 input {
-    padding: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    margin: 2px 0px;
+    color: var(--black);
+    background-color: var(--bg);
+    border: solid 2px var(--primary);
 }

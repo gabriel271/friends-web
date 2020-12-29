@@ -23,7 +23,7 @@ function Chat() {
 
     function leftRoom() {
         socket.emit('leftroom', { room: params.id});
-        history.push('/');
+        history.push('/home');
     }
 
     function sentMessage(event) {

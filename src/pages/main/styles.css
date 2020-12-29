@@ -1,32 +1,41 @@
-#main-container #configs-container {
-    padding: 20px;
+#main-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    background-color: var(--primary);
+    flex-wrap: wrap-reverse;
 }
 
 #main-container section {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-#main-container section #rooms-container ul {
-    min-width: 300px;
-    overflow: auto;
-    max-height: 300px;
-}
-
-#main-container section #rooms-container ul li {
-    width: 100%;
-    padding: 10px;
-}
-
-#main-container section #room-form-container #room-form {
-    display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+#main-container section p { 
+    max-width: 300px;
+    padding: 2px;
+    color: var(--bg);
+}
+
+#main-container section button {
+    max-width: 200px;
+}
+
+#main-container section p a {
+    text-decoration: none;
+    text-align: center;
+    color: var(--bg);
+}
+
+#main-container div img {
+    max-width: 300px;
 }
 
 @media (max-width: 600px) {
-    #main-container section {
-        display: flex;
-        flex-direction: column;
+    #main-container section p {
+        min-width: 250pxh;
     }
 }

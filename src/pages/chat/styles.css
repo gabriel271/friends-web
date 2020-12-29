@@ -1,6 +1,8 @@
 
 #chat-container #header {
     padding: 10px;
+    background-color: var(--primary);
+    color: var(--bg);
 }
 
 #chat-container section {
@@ -13,6 +15,7 @@
 
 #chat-container section ul {
     min-width: 300px;
+    border: solid 20px red;
     width: 70%;
     height: 100%;
     display: flex;
@@ -35,7 +38,7 @@
 }
 
 #chat-container section ul li p:first-child {
-    color: var(--secundary);
+    color: var(--username);
 } 
 
 #chat-container section ul .my-message {
@@ -58,5 +61,5 @@
 }
 
 #chat-container section form input {
-    width: 70%;
+    width: 60%;
 }
