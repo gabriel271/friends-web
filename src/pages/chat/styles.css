@@ -1,7 +1,10 @@
+#chat-container {
+    min-height: 100vh;
+    background-color: var(--primary);
+}
 
 #chat-container #header {
     padding: 10px;
-    background-color: var(--primary);
     color: var(--bg);
 }
 
@@ -13,19 +16,28 @@
     flex-direction: column;
 }
 
+#chat-container #header p {
+    text-align: center;
+    font-size: 16pt;
+    padding: 15px;
+    border-radius: 5px;
+    color: var(--black);
+    box-shadow: 5px 5px 10px #21212130;
+}
+
 #chat-container section ul {
     min-width: 300px;
-    border: solid 20px red;
     width: 70%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    border: solid var(--primary) 2px;
     overflow: auto;
     padding: 5px;
     margin: 5px 0px;
+    background-color: var(--bg);
+    box-shadow: inset 0 0 10px #21212180;
+    border-radius: 10px;
 }
-
 
 #chat-container section ul li {
     list-style: none;

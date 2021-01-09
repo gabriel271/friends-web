@@ -4,7 +4,7 @@ import { socket } from '../../services/socket';
 import './styles.css';
 
 socket.on('connect', () => {
-    socket.emit('login')
+    socket.emit('login');
 });
 
 function Home() {

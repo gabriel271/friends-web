@@ -11,6 +11,9 @@ function Chat() {
 
     useEffect(() => {
         socket.emit('joinroom', { room: params.id});
+        return function cleanup() {
+            socket.emit('leftroom', { room: params.id });
+        }
     }, []);
 
     useEffect(() => {
@@ -22,7 +25,7 @@ function Chat() {
     }, []);
 
     function leftRoom() {
-        socket.emit('leftroom', { room: params.id});
+        socket.emit('leftroom', { room: params.id });
         history.push('/home');
     }
 
@@ -36,7 +39,7 @@ function Chat() {
   return (
       <div id="chat-container">
             <div id="header" className="container">
-                <h2>Sala: {params.name}</h2>
+                <p>Sala {params.name}</p>
                 <button type="button"
                     onClick={leftRoom}
                 >SAIR</button> 
@@ -62,7 +65,7 @@ function Chat() {
                     />
                     <button type="sobumite">ENVIAR</button>
                 </form>
-            </section>    
+            </section>
       </div>
   );
 }
